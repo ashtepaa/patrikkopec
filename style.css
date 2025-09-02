@@ -36,21 +36,39 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 7%;
-    background: #fdfdfd;
+    padding: 10px 40px;
+    background: transparent;
     display: flex;
     align-items: center;
+    justify-content:flex-start;
     z-index: 100;
-    border: #f4acc4;
-    border-bottom: 2px solid #f4acc4;
+    gap: 1rem;
 }
 
-.logo{
-    font-size: 2.5rem;
-    color: #f4acc4;
-    font-weight: 600;
-    cursor: default;
-    margin-right: auto;
+.header.sticky{
+    background: #fdfdfd;
+    box-shadow: 0.1rem 1rem 1rem var(--shadow-color);
+}
+
+.header.sticky .navbar a.active{
+    color:#f4acc4;
+}
+
+.header.sticky .navbar a::before{
+    background-color:#f4acc4;
+}
+
+.logo img{
+    height: 60px;    
+    width: auto;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.navbar{
+  margin-left: auto;             
+  display: flex;
+  gap: 1.5rem; 
 }
 
 .navbar a{
@@ -68,7 +86,7 @@ body{
     bottom: -6px;
     width: 100%;
     height: .2rem;
-    background:#f4acc4;
+    background:#333;
 }
 
 #darkMode-icon{
@@ -127,4 +145,144 @@ section{
 .home-content .social-media a:hover{
     background: #f4acc4;
     color: #fdfdfd;
+}
+
+.home .profession-container{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 768px;
+    height: 768px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.home .profession-container .profession-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 768px;
+    height: 768px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .profession-box .profession{
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #333;
+    transform: rotate(calc(360deg / 6 * var(--i)));
+    transform-origin: 384px;
+    background: var(--bg-color);
+    padding: 13px 0;
+}
+
+.home .profession-box .profession:nth-child(1) i{
+    margin-right: 15px;
+
+}
+
+.home .profession-box .profession:nth-child(4) i,
+.home .profession-box .profession:nth-child(5) i{
+    padding-bottom:20px;
+
+}
+
+.home .profession i{
+    font-size: 3.8rem;
+
+}
+
+.home .profession h3{
+    font-size: 3.2rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.home .profession-box .circle{
+    width: 560px;
+    height: 560px;
+    border: 3px solid #f4acc4;
+    border-radius: 50%;
+}
+
+.home .profession-container .overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 384px solid #f4acc4;
+    border-right: 384px solid #f4acc4;
+    border-bottom: 348px solid #f4acc4;
+    border-left: 384px solid transparent;
+}
+
+.home-img img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28%;
+    pointer-events: none;
+}
+
+span{
+    color: #333;
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-img img{
+    width: 50vw;
+    margin-left: -60px;
+}
+
+.heading{
+    font-size: 4.5rem;
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: #f4acc4;
+    border-radius: .6rem;
+    box-shadow: 0 .2rem .5rem var(--shadow-color);
+    font-size: 1.6rem;
+    color: #fdfdfd;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    border: .2rem solid transparent;
+    transition: .2s ease;
+}
+
+.btn:hover{
+    background: transparent;
+    color: #f4acc4;
+    border-color: #f4acc4;
+}
+
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3{
+    font-size: 2rem;
+}
+
+.about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
 }
