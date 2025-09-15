@@ -25,9 +25,6 @@ window.onscroll = () =>{
         }
     })
 
-
-
-
     let header = document.querySelector('.header');
 
     header.classList.toggle('sticky', window.scrollY > 100);
@@ -37,16 +34,33 @@ window.onscroll = () =>{
 };
 
 var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 50,
-      loop: true,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+  slidesPerView: 1,
+  spaceBetween: 50,
+  loop: true,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+let darkModeIcon = document.querySelector('#darkMode-icon');
+darkModeIcon.onclick = () => {
+  darkModeIcon.classList.toggle('bx-sun');
+  document.body.classList.toggle('dark-mode');
+};
+
+ScrollReveal({ 
+  distance: '80px',
+  duration: 2000,
+  delay: 100
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
+ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
